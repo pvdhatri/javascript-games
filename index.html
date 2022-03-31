@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="pairgame.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+<style>
+      .section {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+.section h2 {
+  font-size: 7.5em;
+  position:absolute;
+  transform: translate(0%, -50%);
+}
+
+.section h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+
+.section h2:nth-child(2) {
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        #section1 {
+          height: 410px;
+          background-color: rgb(7, 7, 97);
+          align-items: center;
+          text-align: center;
+          padding: 100px;
+          font-family: 'League Spartan', sans-serif;
+        }
+        
+        #section2 {
+          height: 100px;
+          background-color: white;
+          /* align-items:flex-end; */
+          text-align:left;
+          margin-top: 20px;
+          font-family: 'League Spartan', sans-serif;
+        }
+        #section3 {
+          height: 550px;
+          background-color: #fae156;
+          align-items: center;
+          text-align: center;
+          margin-top: 0px;
+          margin-bottom: 30px;
+          font-family: 'League Spartan', sans-serif;
+          width: 1100px;
+          align-content: center;
+        }
+        .waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: rgb(40, 159, 189);
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+  margin-bottom: 20px;
+  font-size:22  px;
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-5px)
+  }
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar-inverse navbar-expand-lg " style="background-color: rgb(6, 9, 155);">
+    <!-- <div class="container-fluid"> -->
+        <div class="d-flex flex-row-reverse">
+    <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
+        <!-- <div class="nav-link active p-3" aria-current="page" href="#" style="color: aliceblue;">Contact</div> -->
+        <div class="nav-link active p-3" aria-current="page" href="#" style="color: aliceblue;">Guess the Pairs</div>
+        <div class="nav-link active p-3" aria-current="page" href="#" style="color: aliceblue;">Number Guessing Game</div>
+        <!-- <pre>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Number Guessing Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Hidden Ball Challenge</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Active</a>
+            </li>
+        </pre> -->
+    </div>
+    </div>
+    </nav>
+    <section>
+      <div class="section" id="section1">
+        <h2 style="margin-top: 50px;">JavaScript Challenges</h2>
+        <h2 style="margin-top: 50px;">JavaScript Challenges</h2>
+      </div>
+    </section>
+<div class="main" id="section2">
+    <h1 style="font-size:50px;">Number Guessing Game</h1>
+    <p>Guess the secret number. If your guess is too high or too low, you will get a hint. See how many turns it takes you to win!</p>
+  <!-- <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a> -->
+</div>
+
+<div class="container" style="margin-left: 0px; padding-left: 0px;">
+<div id="section3">
+    <div class="container mt-2">
+        <div class="row" style="justify-content: space-around;">
+            <div class="col-4" style="margin-top: 25px;">
+                <!-- <h4 class="text-center rounded-pill text-white bg-info mb-5 mt-10 py-2">Guess The Number</h4> -->
+                <div id="inputForm">
+                  <div class="mb-3">
+                    <div class="waviy">
+                      <span style="--i:1">G</span>
+                      <span style="--i:2">I</span>
+                      <span style="--i:3">V</span>
+                      <span style="--i:4">E</span>
+                      <span style="--i:5"> </span>
+                      <span style="--i:5"> </span>
+                      <span style="--i:6">Y</span>
+                      <span style="--i:7">o</span>
+                      <span style="--i:8">U</span>
+                      <span style="--i:9">R</span>
+                      <span style="--i:10"> </span>
+                      <span style="--i:10"> </span>
+                      <span style="--i:11">I</span>
+                      <span style="--i:12">N</span>
+                      <span style="--i:13">P</span>
+                      <span style="--i:14">U</span>
+                      <span style="--i:15">T</span>
+                      <span style="--i:16"> </span>
+                      <span style="--i:16"> </span>
+                      <span style="--i:17">H</span>
+                      <span style="--i:18">E</span>
+                      <span style="--i:19">R</span>
+                      <span style="--i:20">E</span>
+                   
+                     </div>
+                    <!-- <label for="userInputNumber" class="form-label" style="font-family: Signika Negative, sans-serif;">Give Your Input Here</label> -->
+                    <input type="number" class="form-control" id="userInputNumber" placeholder="Give any number from 1 to 100">
+                  </div>
+                  <button type="button" class="btn btn-secondary" id="submitButton">Submit Input</button>
+                </div>
+                <p id="result" class="text-danger my-3"></p>
+                <p id="instructions" style="margin-top: 50px; font-family: 'Alfa Slab One', cursive; color: rgb(40, 159, 189);">
+                  The application prompts a user to guess a number between 1 and 100.
+The application compares the user input number to the number it randomly generated.
+Then: if the numbers don't match, it will provide a hint and ask the user to guess again.
+                </p>
+                <!-- <ul class="list-group mt-4" id="userInputListElement">
+                  <li class="list-group-item active">
+                    Your Inputs
+                  </li>
+                </ul> -->
+                <div class="alert alert-success mt-4" id="successMessageBlock" role="alert" style="display: none;">
+                  You have guessed correctly.
+                </div>
+              </div>
+              <div class="col-2">
+                <!-- <button onClick="window.location.reload();"><img src="go.jpg" class="rounded-circle" alt="" style="width: 95px; height: 95px; margin-top: 100px;"></button> -->
+                <img src="go.jpg" class="rounded-circle" alt="" onclick="onClick(this)" style="width: 95px; height: 95px; margin-top: 150px;">
+              </div>
+              <div class="col-4">
+                <ul class="list-group mt-4" id="userInputListElement">
+                    <li class="list-group-item active">
+                      Your Inputs
+                    </li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+</div>
+</div>
+<div class="main" id="section2" style="text-align: right;">
+  <h1 style="font-size:50px;">Guess the Pairs</h1>
+  <p>Guess the secret number. If your guess is too high or too low, you will get a hint. See how many turns it takes you to win!</p>
+<!-- <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a> -->
+</div>
+<div class="container" style="margin-right: 0px; padding-right: 0px;">
+  <div id="section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <h1>Pairs Game</h1>  
+      <!-- <h3>Click any card to begin</h3>  -->
+        </div>
+        <div class="col-2">
+          <!-- <button onClick="window.location.reload();"><img src="go.jpg" class="rounded-circle" alt="" style="width: 95px; height: 95px; margin-top: 100px;"></button> -->
+          <img src="go.jpg" class="rounded-circle" alt="" onclick="onClick(this)" style=
+          "width: 95px; height: 95px; margin-top: 150px;">
+          <p><span id="seconds">00</span>:<span id="tens">00</span></p> 
+          <p id ="text"></p>  
+        </div>
+        <div class="col-7">
+          <div class="wrapper">  
+            <!-- <h1>Pairs Game</h1>  
+            <h3>Click any card to begin</h3>  
+            <p><span id="seconds">00</span>:<span id="tens">00</span></p>  
+            <p id ="text"></p>   -->
+            <div id="container">  
+            </div>  
+           </div>  
+        </div>
+      </div>
+    </div>
+    <!-- <div class="wrapper">  
+      <h1>Pairs Game</h1>  
+      <h3>Click any card to begin</h3>  
+      <p><span id="seconds">00</span>:<span id="tens">00</span></p>  
+      <p id ="text"></p>  
+      <div id="container">  
+      </div>  
+     </div>   -->
+  </div>
+  </div>
+  <script>
+    var myCards = document.getElementById('container');  
+ var resultsArray = [];  
+ var counter = 0;  
+ var text = document.getElementById('text');  
+ var seconds = 00;   
+ var tens = 00;   
+ var appendTens = document.getElementById("tens");  
+ var appendSeconds = document.getElementById("seconds");  
+ var Interval ;  
+ var images = [  
+  'sass',   
+  'git',   
+  'gulp',   
+  'css',   
+  'grunt'  
+ ];  
+ var clone = images.slice(0); // duplicate array  
+ var cards = images.concat(clone); // merge to arrays   
+ // Shufffel function  
+ function shuffle(o){  
+  for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i],  o[i] = o[j], o[j] = x);  
+  return o;  
+ }  
+ shuffle(cards);  
+ for (var i = 0; i < cards.length; i++) {  
+  card = document.createElement('div');  
+  card.dataset.item = cards[i];  
+  card.dataset.view = "card";  
+  myCards.appendChild(card);  
+  card.onclick = function () {  
+   if (this.className != 'flipped' && this.className != 'correct'){  
+     this.className = 'flipped';  
+     var result = this.dataset.item;  
+     resultsArray.push(result);  
+     clearInterval(Interval);  
+     Interval = setInterval(startTimer, 10);  
+   }  
+   if (resultsArray.length > 1) {  
+    if (resultsArray[0] === resultsArray[1]) {  
+     check("correct");  
+     counter ++;  
+     win();  
+     resultsArray = [];  
+    } else {  
+     check("reverse");  
+     resultsArray = [];  
+    }  
+   }  
+  }  
+ };  
+ var check = function(className) {  
+  var x = document.getElementsByClassName("flipped");  
+  setTimeout(function() {  
+   for(var i = (x.length - 1); i >= 0; i--) {  
+    x[i].className = className;  
+   }  
+  },500);  
+ }  
+ var win = function () {  
+  if(counter === 5) {  
+   clearInterval(Interval);  
+   text.innerHTML = "Your time was " + seconds + ":" + tens;  
+  }   
+ }  
+ function startTimer () {  
+  tens++;   
+  if(tens < 9){  
+   appendTens.innerHTML = "0" + tens;  
+  }  
+  if (tens > 9){  
+   appendTens.innerHTML = tens;  
+  }   
+  if (tens > 99) {  
+   seconds++;  
+   appendSeconds.innerHTML = "0" + seconds;  
+   tens = 0;  
+   appendTens.innerHTML = "0" + 0;  
+  }  
+  if (seconds > 9){  
+   appendSeconds.innerHTML = seconds;  
+  }  
+ }  
+  </script>
+
+<script>
+    var programNumber = Math.floor(Math.random() * 100 + 1);
+    console.log(Math.floor(Math.random() * 100 + 1));
+    var userTries = 0;
+    // when the submit button is clicked, we need to fetch the user input value.
+    // click event
+    // Querying using the selector
+    var submitButtonElement = document.getElementById('submitButton'); // we'll get that input inside the JS with the help of this
+    console.log(submitButtonElement);
+    submitButtonElement.addEventListener("click", processUserGuess); //event listener
+    function nameOfTheFunction() {
+      console.log('This is the name displayed from the name of the function.');
+    }
+    function processUserGuess() {
+      // call name function
+      nameOfTheFunction();
+      // update user tries
+      userTries = userTries + 1;
+      console.log('user tries', userTries);
+      if (userTries > 10) {
+        alert('Cannot try for more than 10 times.');
+        return;
+      }
+        // we need to fetch the user input value.
+      console.log('Submit button has been clicked.');
+      var userFormInput = document.getElementById('userInputNumber');
+      console.log(userFormInput);
+      var userFormInputValue = userFormInput.value;
+      if (userFormInputValue == '') {
+        alert('Input cannot be empty. Give a value.');
+        return;
+      }
+      // convert string to intergers
+      // userFormInputValue = parseInt(userFormInputValue);
+      // console.log('Type of the input is: ', typeof userFormInputValue);
+      if (userFormInputValue > 100 || userFormInputValue < 0) {
+        alert('Number should be between 1 and 100');
+        return;
+      }
+      // if (userFormInputValue < 1) {
+      //   alert('Number cannot be less than 1.');
+      //   return;
+      // }
+      console.log('User from input value: ', userFormInputValue);
+      // Update user input value on the list
+      var userInputListElement = document.getElementById('userInputListElement');
+      console.log(userInputListElement);
+      var newListItem = document.createElement("LI"); // Create a <li> node
+      // adding two string is done with + sign
+      var textnode = document.createTextNode("Try " + userTries + " - " + userFormInputValue);
+      newListItem.classList.add("list-group-item"); // Create a text node
+      newListItem.appendChild(textnode);
+      userInputListElement.appendChild(newListItem);
+      // check whether the user input is equal to our program's number
+      // if the number guessed is correct, show the message that the user wins.
+      var resultElement = document.getElementById('result');
+      if (userFormInputValue == programNumber) {
+        console.log('You have guessed correctly.');
+        var successMessageElement = document.getElementById('successMessageBlock');
+        console.log(successMessageElement);
+        successMessageElement.style.display = "block";
+        resultElement.innerText = '';
+        var inputFormElement = document.getElementById('inputForm');
+        inputFormElement.style.display = "none";
+        instructions.style.display = "none";
+      }
+      // The user did not guess the number right, so we need to give some hints.
+      // if the number gusessed is wrong and is less than program's number, give a hint
+      if (userFormInputValue < programNumber) {
+        console.log('Wrong guess. You number is less than the program number.');
+        resultElement.innerText = 'Your guess is wrong. Your number is low.';
+      }
+      // if the number gusessed is wrong and is greater than program's number, give a hint
+      if (userFormInputValue > programNumber) {
+        console.log('Wrong guess. You number is greater than the program number.');
+        resultElement.innerText = 'Your guess is wrong. Your number is high.';
+      }
+    }
+    function onClick(element) {
+        window.location.reload();
+}
+
+</script>
+</body>
+</html>
